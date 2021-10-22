@@ -1,5 +1,5 @@
 ---
-title: "Building Web Apps with Shiny"
+title: "Creación de aplicaciones Web con Shiny"
 output:
   html_document:
     fig_cap: false
@@ -18,33 +18,31 @@ knitr::opts_chunk$set(
   )
 ```
 
-### Welcome!
+### Bienvenid@!
 
-This is a short course that will introduce you to Shiny. 
+El curso está organizado en cuatro módulos:
 
-The course is organized into four modules, which you can access with the navigation bar above. 
+- Módulo 1: ¡Shiny! - Arquitectura de una aplicación Shiny
+- Módulo 2: Flujo reactivo - Entradas para renderizar funciones en Outputs (Salidas)
+- Módulo 3: Aspectos básicos de la reactividad - Profundización en el programa reactivo
+- Módulo 4: Personalización de la interfaz de usuario: comprensión de cómo crear una interfaz de usuario
 
-- Module 1: Hello Shiny! - Architecture of a shiny app
-- Module 2: Reactive flow - Inputs to rendering functions to outputs
-- Module 3: Reactivity essentials - Diving deeper into reactive programming
-- Module 4: Customizing UI - Understanding how to build a user interface
+### Practicando
 
-### Getting practice
+Este curso contiene ejercicios de práctica en los que tendrá la oportunidad de crear y modificar una aplicación Shiny usted mismo.
 
-This course contains practice exercises where you will have the opportunity build and modify a Shiny app yourself. 
-
-When you encounter an exercise in the modules, you will see a button that looks something like this:
+Cuando encuentre un ejercicio en los módulos, verá un botón que se parece a esto:
 
 :::proj
 
-*Navigate to the project called __1-3 Fix it up__ after clicking the button below*
+*Navegue hasta el proyecto llamado __1-3 Fix it up__ después de hacer clic en el botón de abajo*
 
-[<i class="fa fa-cloud"></i> Go to RStudio Cloud Workspace](https://rstudio.cloud/spaces/81721/join?access_code=I4VJaNsKfTqR3Td9hLP7E1nz8%2FtMg6Xbw9Bgqumv){.btn .test-drive}
+[<i class="fa fa-cloud"></i> Ir a RStudio Cloud Workspace](https://rstudio.cloud/spaces/81721/join?access_code=I4VJaNsKfTqR3Td9hLP7E1nz8%2FtMg6Xbw9Bgqumv){.btn .test-drive}
 
 
 :::
 
-This button will link to an RStudio Cloud Workspace for this course, where I have set up a project for each of the exercises. Each of the projects contains code for you to play with, modify, and run!
+Este botón se vinculará a un espacio de trabajo en la nube de RStudio para este curso, donde he configurado un proyecto para cada uno de los ejercicios. ¡Cada uno de los proyectos contiene código para que juegues, modifiques y ejecutes!
 
 ```{r fig.cap = "The course workspace"}
 knitr::include_graphics("images/workspace.png")
@@ -54,18 +52,19 @@ knitr::include_graphics("images/workspace.png")
 knitr::include_graphics("images/cloudproject.png")
 ```
 
-The last project in this workspace contains Shiny scripts with the solutions in case you get stuck.
+El último proyecto en este espacio de trabajo contiene scripts Shiny con las soluciones en caso de que te quedes atascado.
 
+### Ejecutando la aplicación localmente
 
-### Running the app locally
+Si no desea trabajar en proyectos de RStudio Cloud, puede optar por ejecutar el código localmente en su propio IDE de RStudio. Para seguir esta ruta, asegúrese de:
 
-If you don't want to work in RStudio Cloud projects, you can instead choose to run the code locally in your own RStudio IDE. To go this route, make sure you:
-
-1. Download the file containing the data set with the link below, and save it in the RStudio Project you'll be working out of. We will use this file throughout the course. 
+1. Descargue el archivo que contiene el conjunto de datos con el enlace a continuación y guárdelo en el Proyecto RStudio en el que estará trabajando. Usaremos este archivo a lo largo del curso.
 
     ```{r include = TRUE}
+
     # install and load these packages
     # devtools::install_github('yihui/xfun')
+
     # embed_file() requires a few more packages
     xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
     ```
@@ -76,14 +75,14 @@ If you don't want to work in RStudio Cloud projects, you can instead choose to r
     ```
 
 
-2. Copy and paste the code for the each exercise, which you'll find at the end of each exercise question. 
+2. Copie y pegue el código de cada ejercicio, que encontrará al final de cada pregunta del ejercicio. 
 
-### Ready, steady, go!
+### Listo, vamos!
 
-Time to give this Shiny course a whirl!
+¡Es hora de empezar con este curso de Shiny!
 
-### Questions?
+### Preguntas?
 
-[RStudio Community](https://community.rstudio.com/c/shiny/8) is a great place to ask any questions related to Shiny. 
+[RStudio Community](https://community.rstudio.com/c/shiny/8) es un buen lugar para hacer cualquier pregunta relacionada con Shiny.
 
-If you have any suggestions for improvement (bug reports, typos, something unclear that should be revised, etc.) for this particular tutorial, you can open an issue in the [tutorial repo](https://github.com/rstudio-education/shiny-course/).
+
