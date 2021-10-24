@@ -68,7 +68,7 @@ tidymodels - adpated for shiny course
     /* liner gradient tints the image darker for readability*/
     /*background-image: linear-gradient( rgba(0,0,0,.3), rgba(0,0,0,.3) ), url(images/hero-navy.jpg);*/
     background-image: linear-gradient( rgba(41, 59, 156, .17), rgba(0, 188, 212, .25) ), url(images/hero-beige.jpg);
-    height: 400px;
+    height: 500px;
     background-size: cover;
     background-color: #112d47;
     background-position: center top;
@@ -82,6 +82,16 @@ tidymodels - adpated for shiny course
   font-size: 34px;
   padding-bottom: 0.5em;
   text-transform: uppercase;
+  letter-spacing: 2pt;
+  text-align: left;
+  display: block; /* Change to `display: none` for no top text */
+  color: #ffffff88;
+}
+
+.cambio-text {
+  position: relative;
+  font-size: 34px;
+  padding-bottom: 0.5em;
   letter-spacing: 2pt;
   text-align: left;
   display: block; /* Change to `display: none` for no top text */

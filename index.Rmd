@@ -10,6 +10,10 @@ output:
       in_header: site-header.html
 ---
 
+###
+###
+
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   echo = FALSE, 
@@ -17,6 +21,8 @@ knitr::opts_chunk$set(
   out.width = "80%"
   )
 ```
+
+
 
 ### Motivación
 
