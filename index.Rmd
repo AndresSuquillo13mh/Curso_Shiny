@@ -28,10 +28,10 @@ estadístico y creación de gráficos de calidad. Shiny es un paquete de *R* que
 
 El curso está organizado en cuatro módulos:
 
-- Módulo 1: ¡Shiny! - Arquitectura de una aplicación Shiny
-- Módulo 2: Flujo reactivo - Entradas para renderizar funciones en Outputs (Salidas)
-- Módulo 3: Aspectos básicos de la reactividad - Profundización en el programa reactivo
-- Módulo 4: Personalización de la interfaz de usuario: comprensión de cómo crear una interfaz de usuario
+- **Módulo 1:** ¡Shiny! - Arquitectura de una aplicación Shiny
+- **Módulo 2:** Flujo reactivo - Entradas para renderizar funciones en Outputs (Salidas)
+- **Módulo 3:** Aspectos básicos de la reactividad - Profundización en el programa reactivo
+- **Módulo 4:** Personalización de la interfaz de usuario: comprensión de cómo crear una interfaz de usuario
 
 
 ### Aprendemos haciendo
