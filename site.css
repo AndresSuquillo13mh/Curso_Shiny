@@ -79,7 +79,7 @@ tidymodels - adpated for shiny course
 
 .small-text {
   position: relative;
-  font-size: 34px;
+  font-size: 38px;
   padding-bottom: 0.5em;
   text-transform: uppercase;
   letter-spacing: 2pt;
@@ -90,8 +90,9 @@ tidymodels - adpated for shiny course
 
 .cambio-text {
   position: relative;
-  font-size: 34px;
+  font-size: 38px;
   padding-bottom: 0.5em;
+  text-transform: none;
   letter-spacing: 2pt;
   text-align: left;
   display: block; /* Change to `display: none` for no top text */
