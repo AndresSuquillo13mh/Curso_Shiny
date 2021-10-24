@@ -6,19 +6,23 @@ library(dplyr)
 library(tools)
 load("movies.Rdata")
 
-# Define UI for application that plots features of movies -----------
+# Definir la interfaz de usuario para la aplicación que traza las características de las películas -----------
 ui <- fluidPage(
   
-  # Application title -----------------------------------------------
-  titlePanel("Movie browser"),
+  # Titulo de la aplicación -----------------------------------------------
+  titlePanel(
+    fluidRow(
+      column(4, tags$strong("Navegador de películas")), 
+      column(4, img(src="cde_horizontal.png", align = "center",height = 50, width = 200))
+    )),
   
-  # Sidebar layout with a input and output definitions --------------
+  # Diseño de barra lateral con definiciones de entrada y salida --------------
   sidebarLayout(
     
-    # Inputs: Select variables to plot ------------------------------
+    # Inputs: Seleccionar variables para trazar ------------------------------
     sidebarPanel(
       
-      # Select variable for y-axis ----------------------------------
+      # Seleccionar variable para el eje y ----------------------------------
       selectInput(inputId = "y", 
                   label = "Y-axis:",
                   choices = c("IMDB rating" = "imdb_rating", 
@@ -28,7 +32,7 @@ ui <- fluidPage(
                               "Runtime" = "runtime"), 
                   selected = "audience_score"),
       
-      # Select variable for x-axis ----------------------------------
+      # Seleccionar variable para el eje x ----------------------------------
       selectInput(inputId = "x", 
                   label = "X-axis:",
                   choices = c("IMDB rating" = "imdb_rating", 
@@ -38,7 +42,7 @@ ui <- fluidPage(
                               "Runtime" = "runtime"), 
                   selected = "critics_score"),
       
-      # Select variable for color -----------------------------------
+      # Seleccionar variable de color -----------------------------------
       selectInput(inputId = "z", 
                   label = "Color by:",
                   choices = c("Title Type" = "title_type", 
@@ -48,76 +52,78 @@ ui <- fluidPage(
                               "Audience Rating" = "audience_rating"),
                   selected = "mpaa_rating"),
       
-      # Set alpha level ---------------------------------------------
+      # Establecer nivel alfa ---------------------------------------------
       sliderInput(inputId = "alpha", 
                   label = "Alpha:", 
                   min = 0, max = 1, 
                   value = 0.5),
       
-      # Set point size ----------------------------------------------
+      # Establecer tamaño de punto ----------------------------------------------
       sliderInput(inputId = "size", 
-                  label = "Size:", 
+                  label = "Tamaño:", 
                   min = 0, max = 5, 
                   value = 2),
       
-      # Show data table ---------------------------------------------
+      # Mostrar tabla de datos ---------------------------------------------
       checkboxInput(inputId = "show_data",
-                    label = "Show data table",
+                    label = "Mostrar tabla de datos",
                     value = TRUE),
       
-      # Enter text for plot title ---------------------------------------------
+      # Ingrese texto para el título del gráfico ---------------------------------------------
       textInput(inputId = "plot_title", 
-                label = "Plot title", 
-                placeholder = "Enter text to be used as plot title"),
+                label = "Título del gráfico", 
+                placeholder = "Ingrese el texto que se utilizará como título del gráfico"),
       
-      # Horizontal line for visual separation -----------------------
+      # Línea horizontal para separación visual -----------------------
       hr(),
       
-      # Select which types of movies to plot ------------------------
+      # Seleccione qué tipos de películas a graficar ------------------------
       checkboxGroupInput(inputId = "selected_type",
-                         label = "Select movie type(s):",
-                         choices = c("Documentary", "Feature Film", "TV Movie"),
+                         label = "Seleccionar tipo de película:",
+                         choices = c("Documentary" = "Documentary", 
+                                     "Feature Film" = "Feature Film",
+                                     "TV Movie" = "TV Movie"),
                          selected = "Feature Film"),
       
-      # Select sample size ----------------------------------------------------
+      # Seleccione el tamaño de la muestra ----------------------------------------------------
       numericInput(inputId = "n_samp", 
-                   label = "Sample size:", 
+                   label = "Tamaño de la muestra:", 
                    min = 1, max = nrow(movies), 
                    value = 50),
       
-      # Write sampled data as csv ------------------------------------------
+      # Escribir datos de muestra como csv ------------------------------------------
       actionButton(inputId = "write_csv", 
-                   label = "Write CSV")
+                   label = "Escribir CSV")
       
     ),
     
     # Output: -------------------------------------------------------
     mainPanel(
       
-      # Show scatterplot --------------------------------------------
+      # Mostrar diagrama de dispersión --------------------------------------------
       plotOutput(outputId = "scatterplot"),
-      br(),          # a little bit of visual separation
+      br(),          # un poco de separación visual
       
-      # Print number of obs plotted ---------------------------------
+      # Número de impresión de obs trazadas ---------------------------------
       uiOutput(outputId = "n"),
-      br(), br(),    # a little bit of visual separation
+      br(), br(),    # un poco de separación visual
 
-      # Show data table ---------------------------------------------
+      # Mostrar tabla de datos ---------------------------------------------
       DT::dataTableOutput(outputId = "moviestable")
     )
   )
 )
 
-# Define server function required to create the scatterplot ---------
+# Definir la función del servidor necesaria para crear el diagrama de dispersión ---------
 server <- function(input, output, session) {
   
-  # Create a subset of data filtering for selected title types ------
+  # Cree un subconjunto de filtrado de datos para tipos de títulos seleccionados ------
   movies_subset <- reactive({
-    req(input$selected_type) # ensure availablity of value before proceeding
+    req(input$selected_type) # garantizar la disponibilidad de valor antes de continuar
     filter(movies, title_type %in% input$selected_type)
   })
   
-  # Update the maximum allowed n_samp for selected type movies ------
+  # Actualice el n_samp máximo permitido para películas de tipo seleccionado ------
   observe({
     updateNumericInput(session, 
                        inputId = "n_samp",
@@ -126,16 +132,16 @@ server <- function(input, output, session) {
     )
   })
   
-  # Create new df that is n_samp obs from selected type movies ------
+  # Cree un nuevo df que sea n_samp obs de las películas de tipo seleccionado ------
   movies_sample <- reactive({ 
     req(input$n_samp) # ensure availablity of value before proceeding
     sample_n(movies_subset(), input$n_samp)
   })
   
-  # Convert plot_title toTitleCase ----------------------------------
+  # Convertir plot_title enTitleCase ----------------------------------
   pretty_plot_title <- reactive({ toTitleCase(input$plot_title) })
   
-  # Create scatterplot object the plotOutput function is expecting --
+  # Crear un objeto de diagrama de dispersión que espera la función plotOutput --
   output$scatterplot <- renderPlot({
     ggplot(data = movies_sample(), aes_string(x = input$x, y = input$y,
                                               color = input$z)) +
@@ -147,16 +153,16 @@ server <- function(input, output, session) {
       )
   })
   
-  # Print number of movies plotted ----------------------------------
+  # Imprimir número de películas trazadas ----------------------------------
   output$n <- renderUI({
     types <- movies_sample()$title_type %>% 
       factor(levels = input$selected_type) 
     counts <- table(types)
     
-    HTML(paste("There are", counts, input$selected_type, "movies in this dataset. <br>"))
+    HTML(paste("Existen", counts, input$selected_type, "películas en este conjunto de datos. <br>"))
   })
   
-  # Print data table if checked -------------------------------------
+  # Imprimir tabla de datos si está marcado -------------------------------------
   output$moviestable <- DT::renderDataTable(
     if(input$show_data){
       DT::datatable(data = movies_sample()[, 1:7], 
@@ -165,7 +171,7 @@ server <- function(input, output, session) {
     }
   )
   
-  # Write sampled data as csv ---------------------------------------
+  # Escribir datos de muestra como csv ---------------------------------------
   observeEvent(eventExpr = input$write_csv, 
                handlerExpr = {
                  filename <- paste0("movies_", str_replace_all(Sys.time(), ":|\ ", "_"), ".csv")
@@ -175,5 +181,5 @@ server <- function(input, output, session) {
   
 }
 
-# Run the application -----------------------------------------------
+# Ejecuta la aplicación -----------------------------------------------
 shinyApp(ui = ui, server = server)

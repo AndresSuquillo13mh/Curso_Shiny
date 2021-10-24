@@ -1,4 +1,4 @@
-name: "shiny course"
+name: "Curso Shiny"
 output_dir: "docs"
 navbar:
   title: " "
@@ -6,14 +6,14 @@ navbar:
     - icon: fa-home
       href: index.html
   right:
-    - text: "Module 1"
-      href: https://minecr.shinyapps.io/01-hello/
-    - text: "Module 2"
-      href: https://minecr.shinyapps.io/02-flow/
-    - text: "Module 3"
-      href: https://minecr.shinyapps.io/03-reactivity/
-    - text: "Module 4"
-      href: https://minecr.shinyapps.io/04-ui/
+    - text: "Módulo 1"
+      href: https://andres13mh.shinyapps.io/01-hello/
+    - text: "Módulo 2"
+      href: https://andres13mh.shinyapps.io/02-flow/
+    - text: "Módulo 3"
+      href: https://andres13mh.shinyapps.io/04-reactivity/
+    - text: "Módulo 4"
+      href: https://andres13mh.shinyapps.io/04-ui/
 output:
   html_document:
     theme: paper

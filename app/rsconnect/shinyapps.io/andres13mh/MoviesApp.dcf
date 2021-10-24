@@ -1,0 +1,13 @@
+name: MoviesApp
+title: MoviesApp
+username:
+account: andres13mh
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4938849
+bundleId: 5169078
+url: https://andres13mh.shinyapps.io/MoviesApp/
+when: 1634966941.22675
+lastSyncTime: 1634966941.22675
+asMultiple: FALSE
+asStatic: FALSE

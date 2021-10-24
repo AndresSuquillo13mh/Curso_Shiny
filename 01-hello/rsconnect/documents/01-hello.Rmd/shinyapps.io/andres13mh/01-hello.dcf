@@ -1,0 +1,13 @@
+name: 01-hello
+title: 01-hello
+username:
+account: andres13mh
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4943786
+bundleId: 5171722
+url: https://andres13mh.shinyapps.io/01-hello/
+when: 1635080276.12143
+lastSyncTime: 1635080276.12143
+asMultiple: FALSE
+asStatic: FALSE
