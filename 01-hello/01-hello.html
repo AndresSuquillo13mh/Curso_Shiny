@@ -374,15 +374,18 @@ h3, #TOC ul>li {
 <p>En este módulo, comenzaremos presentando los conceptos básicos de Shiny.</p>
 <div id="section-antecedentes" class="section level3">
 <h3>Antecedentes</h3>
+<div style="text-align: justify">
 <p>Antes de comenzar con Shiny, hablemos de antecedentes …</p>
 <p>Este curso asume que está familiarizado con R como lenguaje de programación.</p>
 <p>Además, este curso utiliza paquetes de tidyverse (por ejemplo, <a href="https://tidyverse.org/">tidyverse</a> (e.g. <a href="https://dplyr.tidyverse.org/"><strong>dplyr</strong></a> para la gestión de datos y <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> para la visualización de datos). Sus aplicaciones Shiny pueden usar cualquier paquete, pero si desea obtener más información sobre cómo hacer ciencia de datos con tidyverse, consulte <a href="https://www.tidyverse.org/learn/">aquí</a>.</p>
+</div>
 </div>
 <div id="section-section" class="section level3">
 <h3></h3>
 </div>
 <div id="section-tu-primera-aplicación-shiny" class="section level3">
 <h3>Tu primera Aplicación Shiny</h3>
+<div style="text-align: justify">
 <p>A continuación, crearemos una aplicación Shiny simple. Aprenderemos sobre las dos componentes clave de cada aplicación Shiny: la <strong>IU</strong> (abreviatura de interfaz de usuario) que define cómo se ve su aplicación y la función del <strong>SERVER</strong> que define cómo funciona su aplicación.</p>
 <p>Si aún no ha instalado Shiny, instálelo ahora con:</p>
 <div class="sourceCode" id="section-cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</a>
@@ -395,6 +398,7 @@ h3, #TOC ul>li {
 </ul>
 <p>Comencemos creando un nuevo directorio y agregando un archivo app.R que se ve así: <a href="https://andres13mh.shinyapps.io/Ejemplo1/">Primera app</a></p>
 </div>
+</div>
 <div id="section-una-aplicación-más-estructurada" class="section level3">
 <h3>Una Aplicación más estructurada</h3>
 <p>¡Una aplicación que podrás crear al final del curso!</p>
@@ -402,6 +406,7 @@ h3, #TOC ul>li {
 </div>
 <div id="section-section-1" class="section level3">
 <h3></h3>
+<div style="text-align: justify">
 <p>Repasaremos los detalles técnicos de cada componente de dicha aplicación a lo largo del tutorial, pero por ahora echemos una vista de alto nivel.</p>
 <p><img src="images/shiny-app-annotated.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Tenemos:</p>
@@ -423,8 +428,10 @@ h3, #TOC ul>li {
 </ul>
 <p>Por mucho que parezca que están sucediendo muchas cosas en esta aplicación, la aplicación apenas es una muestra de lo que puede construir con Shiny.</p>
 </div>
+</div>
 <div id="section-consejos" class="section level3">
 <h3>Consejos</h3>
+<div style="text-align: justify">
 <p>Además, repasemos tres consejos muy importantes para aprender a desarrollar aplicaciones Shiny:</p>
 <ol style="list-style-type: decimal">
 <li><p>Siempre <strong>ejecute todo el script</strong> que contenga el código R, no solo hasta el punto en el que esté desarrollando el código. Para la mayoría de los ejercicios de este tutorial, se le pedirá que modifique o actualice el código Shiny existente y, aunque puede estar alterando una pequeña parte del código, aún debe ejecutar el código completo de la aplicación para crear la aplicación.</p></li>
@@ -433,8 +440,10 @@ h3, #TOC ul>li {
 </ol>
 <p><img src="images/missing-comma-ide.png" width="30%" style="display: block; margin: auto;" /></p>
 </div>
+</div>
 <div id="section-estructura-de-una-aplicación-shiny" class="section level3">
 <h3>Estructura de una aplicación Shiny</h3>
+<div style="text-align: justify">
 <p>El script app.R tiene tres componentes:</p>
 <p><img src="images/anatomy.png" width="80%" style="display: block; margin: auto;" /></p>
 <ul>
@@ -444,12 +453,15 @@ h3, #TOC ul>li {
 </ul>
 <p>El objeto ui controla el diseño y la apariencia de la aplicación, mientras que la función server contiene las instrucciones que el computador necesita para construir la aplicación. Finalmente, la función shinyApp crea los objetos de la aplicación Shiny desde el par ui/server.</p>
 </div>
+</div>
 <div id="section-datos" class="section level3">
 <h3>Datos</h3>
+<div style="text-align: justify">
 <p>Para crear la aplicación de navegador de películas.</p>
 <p>Usaremos datos del conjunto de datos de películas, que combina datos de dos sitios web: Internet Movie Database, comúnmente conocida como IMDB, y Rotten Tomatoes. Las observaciones son una muestra aleatoria de 651 películas estrenadas en Estados Unidos entre 1970 y 2014.</p>
 <p>No olvidar cargar las librerías y todas las dependencias necesarias para la aplicación antes de la interfaz de usuario (UI) y la función del servidor (SERVER)</p>
 <p><img src="images/revisit.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
 </div>
 <div id="section-práctica1-responde-la-pregunta" class="section level3">
 <h3>Práctica1: Responde la Pregunta</h3>
@@ -464,8 +476,10 @@ h3, #TOC ul>li {
 </div>
 <div id="section-práctica1-tu-primera-aplicación-shiny" class="section level3">
 <h3>Práctica1: Tu primera Aplicación Shiny</h3>
+<div style="text-align: justify">
 <p>A continuación se puede ver el código completo para reproducir la aplicación que presentamos en la sección anterior. Ahora puedes interactuar con la aplicación tú mismo y realizar pequeños ajustes en ella.</p>
 <p>Ubique las líneas de código relevantes en app.R la construcción del widget selector para el eje Y. Esto está en una función <strong>selectInput()</strong> que comienza en la línea 17, debajo del comentario <strong># Seleccionar variable para el eje y</strong>. Tenga en cuenta que esta función toma cuatro argumentos: <strong>inputId, label, choices, y selected</strong>. Cambie el argumento <strong>selected</strong> a <strong>imdb_rating</strong>, guarde los cambios y vuelva a ejecutar la aplicación haciendo clic en Ejecutar aplicación.</p>
+</div>
 <div class="sourceCode" id="section-cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Cargar paquetes ----------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(shiny)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="kw">library</span>(ggplot2)</a>

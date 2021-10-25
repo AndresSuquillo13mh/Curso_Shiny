@@ -10,8 +10,7 @@ output:
       in_header: site-header.html
 ---
 
-###
-###
+
 
 
 ```{r setup, include = FALSE}
@@ -22,8 +21,7 @@ knitr::opts_chunk$set(
   )
 ```
 
-
-<div style="text-align: justify"> 
+<div style="text-align: justify">
 
 ### Motivación
 
@@ -32,6 +30,20 @@ desarrollado para ser empelado en el análisis y tratamiento de datos, análisis
 estadístico y creación de gráficos de calidad. Shiny es un paquete de *R* que facilita la creación de aplicaciones web interactivas directamente desde *R*. Shiny permite alojar aplicaciones independientes en una página web.
 
 * Se presenta un nuevo estilo de programación llamado programación reactiva que rastrea automáticamente las dependencias de un fragmento de código. Esto significa que cada vez que cambia una entrada, Shiny puede descubrir automáticamente cómo hacer la menor cantidad de trabajo para actualizar todas las salidas relacionadas.
+
+**¿Para qué se usa comunmente Shiny?**
+
+Algunos de los usos que las empresas y personas dan a Shiny a nivel mundial, son los siguientes:
+
+- Crear Dashboards que realicen el seguimiento de los indicadores de rendimiento importantes y faciliten la obtención de resultados empresariales.
+
+- Comunicar modelos complejos a una audiencia no técnica con visualizaciones informativas y análisis interactivos.
+
+- Crear demos interactivos para enseñar conceptos de estadística y ciencia de datos que permitan a los alumnos modificar las entradas y observar los efectos posteriores de esos cambios en un análisis.
+
+- Crear procesos automáticos, como por ejemplo crear varios reportes iguales, pero que cada uno cambie de acuerdo a algunos parametros.
+
+### Contenido del Curso
 
 El curso está organizado en cuatro módulos:
 
@@ -77,6 +89,5 @@ Para ejecutar el código localmente en su propio IDE de RStudio. Para seguir est
 
 [RStudio Community](https://community.rstudio.com/c/shiny/8) es un buen lugar para hacer cualquier pregunta relacionada con Shiny.
 
+
 </div>
-
-

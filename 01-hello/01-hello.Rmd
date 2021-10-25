@@ -41,22 +41,26 @@ h3, #TOC ul>li {
 }
 ```
 
+
 ## 1.1 Introducción
 
 En este módulo, comenzaremos presentando los conceptos básicos de Shiny.
 
-### Antecedentes
 
+### Antecedentes
+<div style="text-align: justify"> 
 Antes de comenzar con Shiny, hablemos de antecedentes ...
 
 Este curso asume que está familiarizado con R como lenguaje de programación.
 
 Además, este curso utiliza paquetes de tidyverse (por ejemplo, [tidyverse](https://tidyverse.org/) (e.g. [**dplyr**](https://dplyr.tidyverse.org/) para la gestión de datos y [**ggplot2**](https://ggplot2.tidyverse.org/) para la visualización de datos). Sus aplicaciones Shiny pueden usar cualquier paquete, pero si desea obtener más información sobre cómo hacer ciencia de datos con tidyverse, consulte [aquí](https://www.tidyverse.org/learn/).
+</div>
+
 
 ### 
 
 ### Tu primera Aplicación Shiny
-
+<div style="text-align: justify">
 A continuación, crearemos una aplicación Shiny simple. Aprenderemos sobre las dos componentes clave de cada aplicación Shiny: la **IU** (abreviatura de interfaz de usuario) que define cómo se ve su aplicación y la función del **SERVER** que define cómo funciona su aplicación. 
 
 Si aún no ha instalado Shiny, instálelo ahora con:
@@ -75,7 +79,7 @@ Hay varias formas de crear una aplicación Shiny. La más simple es crear un nue
 
 
 Comencemos creando un nuevo directorio y agregando un archivo app.R que se ve así: [Primera app](https://andres13mh.shinyapps.io/Ejemplo1/)
-
+</div>
 
 ### Una Aplicación más estructurada
 
@@ -90,6 +94,7 @@ Aplicación que se ve así: [App Final](https://andres13mh.shinyapps.io/MoviesAp
 
 ### 
 
+<div style="text-align: justify">
 Repasaremos los detalles técnicos de cada componente de dicha aplicación a lo largo del tutorial, pero por ahora echemos una vista de alto nivel.
 
 ```{r}
@@ -110,11 +115,11 @@ Tenemos:
    - una salida de tabla de datos que también se actualiza junto con estos.
 
 Por mucho que parezca que están sucediendo muchas cosas en esta aplicación, la aplicación apenas es una muestra de lo que puede construir con Shiny.
-
+</div>
 
 ### Consejos
 
-
+<div style="text-align: justify">
 Además, repasemos tres consejos muy importantes para aprender a desarrollar aplicaciones Shiny:
 
 1. Siempre **ejecute todo el script** que contenga el código R, no solo hasta el punto en el que esté desarrollando el código. Para la mayoría de los ejercicios de este tutorial, se le pedirá que modifique o actualice el código Shiny existente y, aunque puede estar alterando una pequeña parte del código, aún debe ejecutar el código completo de la aplicación para crear la aplicación.
@@ -126,9 +131,11 @@ Además, repasemos tres consejos muy importantes para aprender a desarrollar apl
 ```{r, out.width = "30%"}
 knitr::include_graphics("images/missing-comma-ide.png")
 ```
+</div>
 
 ### Estructura de una aplicación Shiny
 
+<div style="text-align: justify">
 El script app.R tiene tres componentes:
 
 ```{r, out.width = "80%"}
@@ -140,9 +147,11 @@ knitr::include_graphics("images/anatomy.png")
 * Una llamada a la función shinyApp.
 
 El objeto ui controla el diseño y la apariencia de la aplicación, mientras que la función server contiene las instrucciones que el computador necesita para construir la aplicación. Finalmente, la función shinyApp crea los objetos de la aplicación Shiny desde el par ui/server.
+</div>
 
 ### Datos
 
+<div style="text-align: justify">
 Para crear la aplicación de navegador de películas.
 
 Usaremos datos del conjunto de datos de películas, que combina datos de dos sitios web: Internet Movie Database, comúnmente conocida como IMDB, y Rotten Tomatoes. Las observaciones son una muestra aleatoria de 651 películas estrenadas en Estados Unidos entre 1970 y 2014.
@@ -152,6 +161,7 @@ No olvidar cargar las librerías y todas las dependencias necesarias para la apl
 ```{r, out.width = "80%"}
 knitr::include_graphics("images/revisit.png")
 ```
+</div>
 
 ### Práctica1: Responde la Pregunta
 
@@ -171,10 +181,11 @@ question("¿Cuál no es generalmente parte de la arquitectura de la aplicación 
 
 ### Práctica1: Tu primera Aplicación Shiny
 
+<div style="text-align: justify">
 A continuación se puede ver el código completo para reproducir la aplicación que presentamos en la sección anterior. Ahora puedes interactuar con la aplicación tú mismo y realizar pequeños ajustes en ella.
 
 Ubique las líneas de código relevantes en app.R la construcción del widget selector para el eje Y. Esto está en una función **selectInput()** que comienza en la línea 17, debajo del comentario **# Seleccionar variable para el eje y**. Tenga en cuenta que esta función toma cuatro argumentos: **inputId, label, choices, y selected**. Cambie el argumento **selected** a **imdb_rating**, guarde los cambios y vuelva a ejecutar la aplicación haciendo clic en Ejecutar aplicación.
-
+</div>
 
 ```{r ex-1-1-selector, eval = FALSE, echo = TRUE}
 # Cargar paquetes ----------------------------------------------------------------
@@ -226,6 +237,8 @@ server <- function(input, output, session) {
 # Crea un objeto de aplicación Shiny ----------------------------------------------------
 shinyApp(ui = ui, server = server)
 ```
+
+
 
 ## 1.2 Interfaz de usuario (UI)
 
