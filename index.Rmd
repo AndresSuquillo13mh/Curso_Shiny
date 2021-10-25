@@ -23,6 +23,7 @@ knitr::opts_chunk$set(
 ```
 
 
+<div style="text-align: justify"> 
 
 ### Motivación
 
@@ -75,5 +76,7 @@ Para ejecutar el código localmente en su propio IDE de RStudio. Para seguir est
 
 
 [RStudio Community](https://community.rstudio.com/c/shiny/8) es un buen lugar para hacer cualquier pregunta relacionada con Shiny.
+
+</div>
 
 

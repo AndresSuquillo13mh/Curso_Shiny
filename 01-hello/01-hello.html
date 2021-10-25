@@ -327,7 +327,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li>
-              <a href="https://rstudio-education.github.io/shiny-course/">
+              <a href="https://andressuquillo13mh.github.io/Curso_Shiny/">
                 <span class="fa fa-home"></span>
               </a>
             </li>
@@ -465,15 +465,15 @@ h3, #TOC ul>li {
 <div id="section-práctica1-tu-primera-aplicación-shiny" class="section level3">
 <h3>Práctica1: Tu primera Aplicación Shiny</h3>
 <p>A continuación se puede ver el código completo para reproducir la aplicación que presentamos en la sección anterior. Ahora puedes interactuar con la aplicación tú mismo y realizar pequeños ajustes en ella.</p>
-<p>Ubique las líneas de código relevantes en app.R la construcción del widget selector para el eje Y. Esto está en una función <strong>selectInput()</strong> que comienza en la línea 20, debajo del comentario <strong># Select variable for y-axis</strong>. Tenga en cuenta que esta función toma cuatro argumentos: <strong>inputId, label, choices, y selected</strong>. Cambie el selectedargumento a <strong>imdb_rating</strong>, guarde los cambios y vuelva a ejecutar la aplicación haciendo clic en Ejecutar aplicación.</p>
+<p>Ubique las líneas de código relevantes en app.R la construcción del widget selector para el eje Y. Esto está en una función <strong>selectInput()</strong> que comienza en la línea 17, debajo del comentario <strong># Seleccionar variable para el eje y</strong>. Tenga en cuenta que esta función toma cuatro argumentos: <strong>inputId, label, choices, y selected</strong>. Cambie el argumento <strong>selected</strong> a <strong>imdb_rating</strong>, guarde los cambios y vuelva a ejecutar la aplicación haciendo clic en Ejecutar aplicación.</p>
 <div class="sourceCode" id="section-cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Cargar paquetes ----------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(shiny)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="co"># Cargar datos --------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co"># Cargar datos -------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb2-6" title="6"><span class="kw">load</span>(<span class="st">&quot;movies.RData&quot;</span>)</a>
 <a class="sourceLine" id="cb2-7" title="7"></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co"># Definir interfaz de usuario -------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co"># Definir interfaz de usuario ----------------------------------------------------</span></a>
 <a class="sourceLine" id="cb2-9" title="9">ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(</a>
 <a class="sourceLine" id="cb2-10" title="10"></a>
 <a class="sourceLine" id="cb2-11" title="11">  <span class="kw">sidebarLayout</span>(</a>
@@ -521,7 +521,7 @@ h3, #TOC ul>li {
 <div id="section-section-2" class="section level3">
 <h3></h3>
 <p>En esta sección, crearemos la interfaz de usuario de una aplicación.</p>
-<p>Sin embargo, antes revisemos la estructura visual básica de la App Shiny.</p>
+<p>Sin embargo, antes revisemos la estructura visual básica de una App Shiny.</p>
 <p><img src="images/app-selectinput-scatterplot.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><p>La interfaz de usuario (UI), define y presenta las entradas de su aplicación donde se pueden hacer las selecciones. También presenta las salidas.</p></li>

@@ -173,7 +173,7 @@ question("¿Cuál no es generalmente parte de la arquitectura de la aplicación 
 
 A continuación se puede ver el código completo para reproducir la aplicación que presentamos en la sección anterior. Ahora puedes interactuar con la aplicación tú mismo y realizar pequeños ajustes en ella.
 
-Ubique las líneas de código relevantes en app.R la construcción del widget selector para el eje Y. Esto está en una función **selectInput()** que comienza en la línea 20, debajo del comentario **# Select variable for y-axis**. Tenga en cuenta que esta función toma cuatro argumentos: **inputId, label, choices, y selected**. Cambie el selectedargumento a **imdb_rating**, guarde los cambios y vuelva a ejecutar la aplicación haciendo clic en Ejecutar aplicación.
+Ubique las líneas de código relevantes en app.R la construcción del widget selector para el eje Y. Esto está en una función **selectInput()** que comienza en la línea 17, debajo del comentario **# Seleccionar variable para el eje y**. Tenga en cuenta que esta función toma cuatro argumentos: **inputId, label, choices, y selected**. Cambie el argumento **selected** a **imdb_rating**, guarde los cambios y vuelva a ejecutar la aplicación haciendo clic en Ejecutar aplicación.
 
 
 ```{r ex-1-1-selector, eval = FALSE, echo = TRUE}
@@ -181,10 +181,10 @@ Ubique las líneas de código relevantes en app.R la construcción del widget se
 library(shiny)
 library(ggplot2)
 
-# Cargar datos --------------------------------------------------------------------
+# Cargar datos -------------------------------------------------------------------
 load("movies.RData")
 
-# Definir interfaz de usuario -------------------------------------------------------------
+# Definir interfaz de usuario ----------------------------------------------------
 ui <- fluidPage(
 
   sidebarLayout(
@@ -233,7 +233,8 @@ shinyApp(ui = ui, server = server)
 
 En esta sección, crearemos la interfaz de usuario de una aplicación.
 
-Sin embargo, antes revisemos la estructura visual básica de la App Shiny.
+Sin embargo, antes revisemos la estructura visual básica de una App Shiny.
+
 
 ```{r}
 knitr::include_graphics("images/app-selectinput-scatterplot.png")
